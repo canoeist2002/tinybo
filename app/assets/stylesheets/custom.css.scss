@@ -1,0 +1,57 @@
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+/* universal */
+
+html {
+
+}
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+/* typography */
+h1 {
+  margin-bottom: 30px;
+}
+
+/* hero-unit */
+.hero-unit h1 {
+  margin-bottom: 30px;
+}
+
+/* footer */
+footer {
+  color: #ddd;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* form */
+input, textarea, select {
+  width: 100%;
+}
+
+form .error {
+  color: red;
+}

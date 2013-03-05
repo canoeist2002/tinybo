@@ -1,0 +1,15 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Tinybo", root_path, id: "logo", class: 'brand'%>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "首页", root_path %></li>
+              <li><%= link_to "帮助", help_path %></li>
+              <li><%= link_to "登陆", new_user_session_path %></li>
+              <li><%= link_to "注销", destroy_user_session_path, method: 'delete' %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>

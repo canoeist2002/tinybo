@@ -1,3 +1,12 @@
 <% provide(:title, 'Tinybo') %>
-<h1>Tinybo</h1>
-<p>这个页面就是主页了，但现在还没有任何内容。</p>
+<div class="center hero-unit">
+  <h1>Tinybo</h1>
+
+  <p>
+    这是一个小小小微博，是微博的极简版本。主要的用途是完成一个微博应该有的功能，同时方便交流和沟通。
+  </p>
+
+  <%= link_to "点我注册", new_user_registration_path, class: "btn btn-large btn-primary" %>
+</div>
+
+

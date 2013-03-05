@@ -1,0 +1,13 @@
+<h2>用户注册</h2>
+<div class="row">
+  <div class="span5">
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.input :name, label: '用户名：' %>
+  <%= f.input :email, label: 'E-mail:'  , required: true %>
+  <%= f.input :password, label: '密码：', required: true %>
+  <%= f.input :password_confirmation, label: '确认密码：', required: true %>
+  <%= f.submit '注册', class: "btn" %>
+<% end %>
+</div>
+</div>
+<%= render "devise/shared/links" %>

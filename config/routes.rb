@@ -1,10 +1,14 @@
 # -*- encoding : utf-8 -*-
 Rails3BootstrapDeviseCancan::Application.routes.draw do
-  get "static_pages/home"
+  authenticated :user do
+    root :to => 'static_pages#home'
+  end
+  root :to => "static_pages#home"
+  devise_for :users
+  resources :users
 
-  get "static_pages/help"
-
-  get "static_pages/about"
+  match '/help' => 'static_pages#help'
+  match '/about' => 'static_pages#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
