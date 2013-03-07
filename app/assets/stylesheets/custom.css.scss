@@ -56,3 +56,14 @@ input, textarea, select {
 form .error {
   color: red;
 }
+
+.users {
+  padding-top: 40px;
+  li {
+    line-height: 40px;
+    border-bottom: 1px dotted #ddd;
+    &:first-child {
+      border-top: 1px dotted #ddd;
+    }
+  }
+}
