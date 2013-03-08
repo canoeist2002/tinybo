@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= simple_form_for(@micropost) do |f| %>
+    <%= f.input :content, as: :text, input_html: { maxlength: 248, rows: 10, maxlength: 180 }, placeholder: "这此输入内容..." %>
+    <%= f.submit "提交", class: "btn btn-primary" %>
+  <% end %>
+<% end %>

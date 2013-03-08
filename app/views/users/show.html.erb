@@ -1,2 +1,19 @@
-<h1><%= @user.name %></h1>
-<p><%= @user.name %>，<%= @user.email %></p>
+<% provide(:title, @user.name + " | Tinybo") %>
+
+<div class="row">
+  <div class="span3">
+    <h1><%= @user.name %></h1>
+    <p><%= @user.email %></p>
+    <%= render 'shared/microposts_form' %>
+  </div>
+  <div class="span8 offset1">
+    <% if @user.microposts.any? %>
+      <h3>已发布的微博</h3>
+      <p class="muted">共记 <%= @user.microposts.count %> 条</p>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

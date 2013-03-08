@@ -1,0 +1,14 @@
+<% provide(:title, "| Tinybo") %>
+
+<div class="row">
+  <div class="span8">
+      <% if @microposts.any? %>
+      <h3>已发布的微博</h3>
+      <p class="muted">共记 <%= @microposts.count %> 条</p>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
+</div>

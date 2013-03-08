@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 /* mixins, variables, etc. */
 
@@ -13,13 +14,12 @@ $grayMediumLight: #eaeaea;
 
 /* universal */
 
-html {
-
+body {
+  padding-bottom: 40px;
 }
 
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
+.navbar {
+  padding-bottom: 20px;
 }
 
 /* typography */
@@ -64,6 +64,26 @@ form .error {
     border-bottom: 1px dotted #ddd;
     &:first-child {
       border-top: 1px dotted #ddd;
+    }
+  }
+}
+
+/* microposts */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding-top: 30px;
+    border-bottom: 1px dotted #ddd;
+
+    .content {
+      display: block;
+    }
+
+    .timestamp {
+      color: #ddd;
+      line-height: 2em;
     }
   }
 }

@@ -10,5 +10,7 @@ describe "Authentication" do
     it { source.should have_selector('h2', text: '登陆') }
     it { source.should have_selector('title', text: '登陆') }
   end
+
+
   
 end
