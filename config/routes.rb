@@ -5,8 +5,13 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   end
   root :to => "static_pages#home"
   devise_for :users
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   match '/help' => 'static_pages#help'
   match '/about' => 'static_pages#about'

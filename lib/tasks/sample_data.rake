@@ -19,4 +19,13 @@ namespace :db do
       users.each{ |user| user.microposts.create!(content: content) }
     end
   end
+
+  task relationships: :environment do
+    users = User.all
+    user  = users.first
+    followed_users = users[2..10]
+    followers      = users[3..15]
+    followed_users.each { |followed| user.follow!(followed) }
+    followers.each      { |follower| follower.follow!(user) }
+  end
 end

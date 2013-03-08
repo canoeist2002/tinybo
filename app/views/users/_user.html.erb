@@ -1,0 +1,7 @@
+<li>
+  <%= user.id %>
+  <%= link_to user.name, user %> by <%= user.email %>signed up <%= user.created_at.to_date %>
+  <% if (current_user.has_role? :admin) && !(current_user == user) %>
+    <%= link_to "delete", user, method: :delete, confirm: "你确定吗?", class: "btn btn-mini btn-danger"%>
+  <% end %>
+</li>

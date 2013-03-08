@@ -3,7 +3,7 @@ class MicropostsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @microposts = Micropost.paginate(page: params[:page])
+    @microposts = current_user.feed.paginate(page: params[:page])
   end
 
   def create
