@@ -57,3 +57,4 @@ gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem 'faker','1.0.1'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem "friendly_id", "~> 4.0.9"
