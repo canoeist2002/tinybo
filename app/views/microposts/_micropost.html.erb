@@ -1,7 +1,7 @@
 <li>
-  <div class="gravatar pull-left"><%= image_tag micropost.user.gravatar_url %></div>
+  <div class="gravatar span1 pull-left"><%= image_tag micropost.user.gravatar_url %></div>
   <div>
-    <span class="content"><%= micropost.content %></span>
+    <span class="content"><%= wrap(micropost.content) %></span>
     
     <span class="timestamp">
       <% if microposts_path %>
