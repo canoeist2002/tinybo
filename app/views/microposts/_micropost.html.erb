@@ -1,9 +1,9 @@
 <li>
-  <div class="gravatar span1 pull-left"><%= image_tag micropost.user.gravatar_url %></div>
+  <div class="gravatar pull-left"><%= image_tag micropost.user.gravatar_url %></div>
   <div>
-    <span class="content"><%= wrap(micropost.content) %></span>
+    <p class="content"><%= wrap(micropost.content) %></p>
     
-    <span class="timestamp">
+    <p class="timestamp">
       <% if microposts_path %>
 
         by <%= micropost.user.name %>　　
@@ -15,6 +15,6 @@
                                        data: { confirm: "你确定删除么?" },
                                        title: micropost.content %>
       <% end %>
-    </span>
+    </p>
   </div>
 </li>
