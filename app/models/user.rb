@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  include Gravtastic
+  gravtastic secure: false, size: 40
+
+
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

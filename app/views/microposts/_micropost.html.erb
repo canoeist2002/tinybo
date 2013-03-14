@@ -1,16 +1,20 @@
 <li>
-  <span class="content"><%= micropost.content %></span>
-  
-  <span class="timestamp">
-  <% if microposts_path %>
-    by <%= micropost.user.name %>　　
-  <% end %>
-  
-    发布于：<%= time_ago_in_words(micropost.created_at) %> ago。
-    <% if current_user == micropost.user %>
-    <%= link_to "delete", micropost, method: :delete,
-                                     data: { confirm: "你确定删除么?" },
-                                     title: micropost.content %>
-    <% end %>
-  </span>
+  <div class="gravatar pull-left"><%= image_tag micropost.user.gravatar_url %></div>
+  <div>
+    <span class="content"><%= micropost.content %></span>
+    
+    <span class="timestamp">
+      <% if microposts_path %>
+
+        by <%= micropost.user.name %>　　
+      <% end %>
+    
+      发布于：<%= time_ago_in_words(micropost.created_at) %> ago。
+      <% if current_user == micropost.user %>
+      <%= link_to "delete", micropost, method: :delete,
+                                       data: { confirm: "你确定删除么?" },
+                                       title: micropost.content %>
+      <% end %>
+    </span>
+  </div>
 </li>

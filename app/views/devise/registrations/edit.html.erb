@@ -9,8 +9,10 @@
   <%= f.submit '更改', class: "btn" %>
 <% end %>
 
-<p class="muted">删除账号</p>
+    <p><%= image_tag current_user.gravatar_url %>
+    <a href="http://gravatar.com/emails" target="_blank">更改头像</a></p>
+
+
 
 <p class="muted">不高兴? <%= link_to "删除账号", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
-<%= link_to "回首页", :back %>

@@ -4,6 +4,8 @@ class MicropostsController < ApplicationController
 
   def index
     @microposts = current_user.feed.paginate(page: params[:page])
+    @user = current_user
+    @micropost = @user.microposts.build
   end
 
   def create
