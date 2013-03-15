@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   include Gravtastic
-  gravtastic secure: false, size: 40
+  gravtastic secure: false, size: 48
 
 
   rolify
