@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
             class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :reverse_relationships, source: :follower
   # attr_accessible :title, :body
-  validates_presence_of :name
+  validates :name, :presence => true, :length => { :minimum => 3, :maximum => 26 }
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   def feed
