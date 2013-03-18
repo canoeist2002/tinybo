@@ -1,12 +1,27 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
 
+group :development, :test do
+  gem 'sqlite3'
+  gem "rspec-rails", ">= 2.13"
+  gem "factory_girl_rails", ">= 4.2.0"
+end
+
+group :test do
+  gem "database_cleaner", ">= 0.9.1"
+  gem "email_spec", ">= 1.4.0"
+  gem "cucumber-rails", ">= 1.3.0", :require => false
+  gem "capybara", ">= 2.0.2"
+  gem "launchy", ">= 2.1.2"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,7 +36,17 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+gem "bootstrap-sass", ">= 2.2.2.0"
+gem "devise", ">= 2.2.3"
+gem "cancan", ">= 1.6.8"
+gem "rolify", ">= 3.2.0"
+gem "simple_form", ">= 2.0.4"
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate', '0.0.6'
+gem "friendly_id", "~> 4.0.9"
+gem 'gravtastic'
+gem 'faker','1.0.1'
+gem "figaro", ">= 0.5.3"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -37,25 +62,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "rspec-rails", ">= 2.13", :group => [:development, :test]
-gem "database_cleaner", ">= 0.9.1", :group => :test
-gem "email_spec", ">= 1.4.0", :group => :test
-gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
-gem "launchy", ">= 2.1.2", :group => :test
-gem "capybara", ">= 2.0.2", :group => :test
-gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.2.2.0"
-gem "devise", ">= 2.2.3"
-gem "cancan", ">= 1.6.8"
-gem "rolify", ">= 3.2.0"
-gem "simple_form", ">= 2.0.4"
+
+
 gem "quiet_assets", ">= 1.0.1", :group => :development
-gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 
-gem 'faker','1.0.1'
-gem 'will_paginate', '~> 3.0'
-gem 'bootstrap-will_paginate', '0.0.6'
-gem "friendly_id", "~> 4.0.9"
-gem 'gravtastic'
+
