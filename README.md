@@ -1,5 +1,7 @@
 该网络应用是在 Michael Hartl 的 railstutorial 教程的基本框架下完成的，只是做了部分的修改！
 
+## 关于
+
 * 该网站使用的是 Rails3BootstrapDeviseCancan 生成的基本框架；
 
 * 中文化了网站的内容，但并没有实现对国际化的支持（因为无须用到国际化）；
@@ -36,7 +38,7 @@
 
     $ rails console
     > admin = User.create(name:"admin", email:"admin@example.com", password:"foobar", password_confirmation:"foobar")
-    >  admin.add_role :admin
+    > admin.add_role :admin
 
 ## 演示版本
 

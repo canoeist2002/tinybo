@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :followers, through: :reverse_relationships, source: :follower
   # attr_accessible :title, :body
   validates :name, :presence => true, :length => { :minimum => 3, :maximum => 26 }
+  validates :password, :length => { :minimum => 5 }
+  validates :password_confirmation, :presence => true
   validates_uniqueness_of :name, :email, :case_sensitive => false
 
   def feed
