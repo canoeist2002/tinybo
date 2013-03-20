@@ -18,8 +18,13 @@ describe Micropost do
     it { should_not be_valid }
   end
 
-  describe " with content that is too long" do
+  describe "with content that is too long" do
     before { @micropost.content = "a" * 282 }
+    it { should_not be_valid }
+  end
+
+  describe "with nil user.id" do
+    before { @micropost.user_id = nil }
     it { should_not be_valid }
   end
 end
